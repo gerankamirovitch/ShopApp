@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopApp.Views.ClassesPage"
+             Title="Классы магазина">
+	<ScrollView Padding="20">
+		<VerticalStackLayout Spacing="15">
+			<Label Text="Модели данных интернет-магазина" Style="{StaticResource TitleLabel}"/>
+
+			<!-- Category -->
+			<Frame>
+				<VerticalStackLayout Spacing="5">
+					<Label Text="Category" Style="{StaticResource SubtitleLabel}"/>
+					<Label FontFamily="Courier New"
+                           Text="public class Category {&#xA;    public int Id { get; set; }&#xA;    public string Name { get; set; }&#xA;}"
+                           FontSize="Small"/>
+				</VerticalStackLayout>
+			</Frame>
+
+			<!-- Product -->
+			<Frame>
+				<VerticalStackLayout Spacing="5">
+					<Label Text="Product" Style="{StaticResource SubtitleLabel}"/>
+					<Label FontFamily="Courier New"
+                           Text="public class Product {&#xA;    public int Id { get; set; }&#xA;    public string Name { get; set; }&#xA;    public decimal Price { get; set; }&#xA;    public string Description { get; set; }&#xA;    public int CategoryId { get; set; }&#xA;    public string ImageUrl { get; set; }&#xA;    public List&lt;string&gt; ImageUrls { get; set; }&#xA;    public int Stock { get; set; }&#xA;    public double AverageRating { get; set; }&#xA;    public List&lt;Review&gt; Reviews { get; set; }&#xA;    public string DisplayPrice => $&quot;{Price:C}&quot;;&#xA;    public string StockStatus => ...&#xA;}"
+                           FontSize="Small"/>
+				</VerticalStackLayout>
+			</Frame>
+
+			<!-- Customer -->
+			<Frame>
+				<VerticalStackLayout Spacing="5">
+					<Label Text="Customer" Style="{StaticResource SubtitleLabel}"/>
+					<Label FontFamily="Courier New"
+                           Text="public class Customer {&#xA;    public int Id { get; set; }&#xA;    public string Name { get; set; }&#xA;    public string Email { get; set; }&#xA;}"
+                           FontSize="Small"/>
+				</VerticalStackLayout>
+			</Frame>
+
+			<!-- CartItem -->
+			<Frame>
+				<VerticalStackLayout Spacing="5">
+					<Label Text="CartItem" Style="{StaticResource SubtitleLabel}"/>
+					<Label FontFamily="Courier New"
+                           Text="public class CartItem {&#xA;    public Product Product { get; set; }&#xA;    public int Quantity { get; set; }&#xA;    public decimal Total => Product.Price * Quantity;&#xA;}"
+                           FontSize="Small"/>
+				</VerticalStackLayout>
+			</Frame>
+
+			<!-- Order -->
+			<Frame>
+				<VerticalStackLayout Spacing="5">
+					<Label Text="Order" Style="{StaticResource SubtitleLabel}"/>
+					<Label FontFamily="Courier New"
+                           Text="public class Order {&#xA;    public int Id { get; set; }&#xA;    public DateTime OrderDate { get; set; }&#xA;    public Customer Customer { get; set; }&#xA;    public List&lt;CartItem&gt; Items { get; set; }&#xA;    public decimal TotalAmount { get; set; }&#xA;}"
+                           FontSize="Small"/>
+				</VerticalStackLayout>
+			</Frame>
+
+			<!-- Review -->
+			<Frame>
+				<VerticalStackLayout Spacing="5">
+					<Label Text="Review" Style="{StaticResource SubtitleLabel}"/>
+					<Label FontFamily="Courier New"
+                           Text="public class Review {&#xA;    public string UserName { get; set; }&#xA;    public int Rating { get; set; }&#xA;    public string Comment { get; set; }&#xA;    public DateTime Date { get; set; }&#xA;}"
+                           FontSize="Small"/>
+				</VerticalStackLayout>
+			</Frame>
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

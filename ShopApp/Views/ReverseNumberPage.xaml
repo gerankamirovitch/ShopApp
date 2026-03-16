@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopApp.Views.ReverseNumberPage"
+             Title="Обратное число">
+	<VerticalStackLayout Padding="20" Spacing="20">
+		<Label Text="Введите целое число" Style="{StaticResource TitleLabel}"/>
+		<Frame>
+			<VerticalStackLayout Spacing="15">
+				<Entry x:Name="NumberEntry"
+                       Placeholder="например, -12345"
+                       Keyboard="Numeric"
+                       ReturnType="Done"/>
+				<Button Text="Перевернуть"
+                        Clicked="OnReverseClicked"
+                        BackgroundColor="{StaticResource Primary}"/>
+				<Label x:Name="ResultLabel"
+                       FontSize="Large"
+                       HorizontalOptions="Center"
+                       TextColor="{StaticResource PrimaryDark}"/>
+			</VerticalStackLayout>
+		</Frame>
+	</VerticalStackLayout>
+</ContentPage>

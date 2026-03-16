@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopApp.Views.MainShopPage"
+             Title="Главная">
+    <Grid RowDefinitions="Auto, *">
+        <!-- Строка поиска -->
+        <Entry x:Name="searchEntry" 
+               Placeholder="Поиск товаров..." 
+               TextChanged="OnSearchTextChanged"
+               Margin="10"/>
+
+        <!-- Коллекция товаров -->
+        <CollectionView Grid.Row="1" 
+                        x:Name="ProductsCollection" 
+                        SelectionMode="Single"
+                        SelectionChanged="OnProductSelected"
+                        ItemsLayout="VerticalGrid, 2">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItem Text="В корзину" 
+                                       BackgroundColor="{StaticResource Success}"
+                                       Invoked="OnAddToCartInvoked"/>
+                        </SwipeView.RightItems>
+                        <Frame Margin="5" Padding="10">
+                            <Grid RowDefinitions="Auto, Auto, Auto">
+                                <Image Grid.Row="0" Source="{Binding ImageUrl}" 
+                                       Aspect="AspectFill"
+                                       HeightRequest="120" 
+                                       WidthRequest="120"
+                                       HorizontalOptions="Center"/>
+                                <Label Grid.Row="1" Text="{Binding Name}" 
+                                       FontSize="Medium" 
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Center"/>
+                                <Label Grid.Row="2" Text="{Binding DisplayPrice}" 
+                                       FontSize="Small" 
+                                       TextColor="{StaticResource Success}"
+                                       HorizontalOptions="Center"/>
+                            </Grid>
+                        </Frame>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

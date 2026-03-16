@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopApp.Views.ProductClassPage"
+             Title="Пример товара">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <Label Text="Смартфон Obeme Pro" Style="{StaticResource TitleLabel}"/>
+
+            <!-- Карусель изображений -->
+            <CarouselView x:Name="carousel" HeightRequest="400" Loop="False">
+                <CarouselView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>phone_front.png</x:String>
+                        <x:String>phone_back.png</x:String>
+                        <x:String>phone_side.png</x:String>
+                    </x:Array>
+                </CarouselView.ItemsSource>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding .}" 
+                               Aspect="AspectFit" 
+                               HeightRequest="400"/>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <Frame>
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Характеристики" Style="{StaticResource SubtitleLabel}"/>
+                    <Label Text="• 6.7-дюймовый дисплей XDR (2778x1284)&#xA;• Процессор A16 Bionic&#xA;• 256 ГБ встроенной памяти&#xA;• Основная камера 48 МП + 12 МП (ультраширокий) + 12 МП (телефото)&#xA;• Фронтальная камера 12 МП&#xA;• Аккумулятор 4300 мАч, быстрая зарядка; Защита от воды и пыли IP68&#xA;• Операционная система Android 26" 
+                           FontSize="Body"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame>
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Описание" Style="{StaticResource SubtitleLabel}"/>
+                    <Label Text="Смартфон Obeme Pro — это новейшее устройство с потрясающим дисплеем, мощным процессором и профессиональной камерой. Идеально подходит для фотосъёмки, игр и работы. Благодаря большому аккумулятору вы сможете пользоваться им весь день без подзарядки." 
+                           FontSize="Body"/>
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
