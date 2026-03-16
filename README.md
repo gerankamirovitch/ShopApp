@@ -1,0 +1,2 @@
+# ShopApp
+.NET MAUI ShopApp
